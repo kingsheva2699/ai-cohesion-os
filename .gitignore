@@ -1,0 +1,32 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Project Memory OS generated/private workspaces
+my-ai-workspace/
+workspace/
+private-workspace/
+*.local.md
+*.private.md
+reports/*.tmp
+
+# Logs/cache
+*.log
+.cache/
+
+# Secrets/config
+*secret*
+*credential*
+*.key
+*.pem
