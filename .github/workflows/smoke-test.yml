@@ -1,0 +1,19 @@
+﻿name: smoke-test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run starter kit smoke test
+        run: |
+          python scripts/init_workspace.py ./tmp-workspace
+          python scripts/weekly_report.py ./tmp-workspace
+          test -f ./tmp-workspace/reports/weekly_report_$(date +%F).md

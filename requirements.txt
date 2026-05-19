@@ -1,0 +1,2 @@
+﻿# No third-party dependencies required for the starter kit yet.
+# Future optional packages may include: chromadb, sentence-transformers, rich, typer.
