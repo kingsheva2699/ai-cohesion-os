@@ -126,3 +126,8 @@ Early starter-kit version. The first goal is practical usefulness: let people do
 ## License
 
 Apache-2.0.
+
+## Built by AI FlowPal
+
+AI Cohesion OS is maintained as a public starter kit by [AI FlowPal](https://aiflowpal.com/) ? practical AI workflow systems for customer-facing operations, project memory, and follow-through.
+
