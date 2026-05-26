@@ -20,6 +20,10 @@ private-workspace/
 *.local.md
 *.private.md
 reports/*.tmp
+.cohesion/context_index.json
+.cohesion/context_chunks.json
+**/.cohesion/context_index.json
+**/.cohesion/context_chunks.json
 
 # Logs/cache
 *.log

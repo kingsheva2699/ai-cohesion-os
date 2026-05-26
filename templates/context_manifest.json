@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "purpose": "Optional human-maintained routing hints for AI Cohesion OS context serving.",
+  "routing_order": [
+    "README.md",
+    "projects/*/project_profile.md",
+    "memory/decision_log.md",
+    "reports/latest weekly report",
+    "inbox/ only when looking for unsorted notes"
+  ],
+  "domains": [
+    {
+      "id": "example-project",
+      "title": "Example project",
+      "entrypoints": [
+        "projects/example_project/project_profile.md"
+      ],
+      "aliases": [
+        "example",
+        "starter project"
+      ],
+      "sensitivity": "internal",
+      "index_policy": "full-text"
+    }
+  ],
+  "exclude_notes": [
+    "Do not publish generated .cohesion indexes from private workspaces.",
+    "Add project-specific secret or export folders to the indexer exclusions before sharing."
+  ]
+}

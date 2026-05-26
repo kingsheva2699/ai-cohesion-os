@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 from pathlib import Path
 import shutil
 import sys
@@ -12,7 +12,9 @@ WORKSPACE_DIRS = [
     'reports',
     'memory',
     'templates',
+    '.cohesion',
 ]
+
 
 def copy_template(name: str, target: Path):
     src = ROOT / 'templates' / name
@@ -30,11 +32,33 @@ def main():
         (ws / d).mkdir(exist_ok=True)
     copy_template('project_profile.md', ws / 'templates' / 'project_profile.md')
     copy_template('weekly_report.md', ws / 'templates' / 'weekly_report.md')
+    copy_template('context_manifest.json', ws / 'templates' / 'context_manifest.json')
     copy_template('decision_log.md', ws / 'memory' / 'decision_log.md')
     readme = ws / 'README.md'
     if not readme.exists():
-        readme.write_text(f'''# Project Memory Workspace\n\nCreated: {date.today()}\n\n## Folders\n\n- `projects/` — one folder per project\n- `inbox/` — raw notes to sort\n- `reports/` — weekly/monthly reports\n- `memory/` — decision logs and durable context\n- `templates/` — reusable templates\n\n## Next step\n\nCreate a project folder and copy `templates/project_profile.md` into it.\n''', encoding='utf-8')
+        readme.write_text(f'''# Project Memory Workspace
+
+Created: {date.today()}
+
+## Folders
+
+- `projects/` - one folder per project
+- `inbox/` - raw notes to sort
+- `reports/` - weekly/monthly reports
+- `memory/` - decision logs and durable context
+- `templates/` - reusable templates
+- `.cohesion/` - generated local context indexes (do not publish private indexes)
+
+## Next step
+
+Create a project folder and copy `templates/project_profile.md` into it. Then run:
+
+```bash
+python scripts/context_index.py . build
+```
+''', encoding='utf-8')
     print(f'Initialized Project Memory workspace at {ws}')
+
 
 if __name__ == '__main__':
     raise SystemExit(main())

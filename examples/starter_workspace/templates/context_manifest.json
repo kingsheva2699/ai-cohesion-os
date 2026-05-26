@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "purpose": "Optional routing hints for this example workspace.",
+  "routing_order": [
+    "README.md",
+    "projects/*/project_profile.md",
+    "memory/decision_log.md",
+    "reports/latest weekly report"
+  ],
+  "domains": [
+    {
+      "id": "example-project",
+      "title": "Example project",
+      "entrypoints": ["projects/example_project_README.md"],
+      "aliases": ["example", "starter project"],
+      "sensitivity": "internal",
+      "index_policy": "full-text"
+    }
+  ]
+}

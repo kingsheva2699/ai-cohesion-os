@@ -10,7 +10,7 @@ Recommended GitHub repo name:
 
 Use this:
 
-`Local-first AI cohesion layer using project tracing to keep workspaces, decisions, open loops, and reports self-maintaining.`
+`Local-first AI cohesion layer using project tracing and context serving to keep AI-heavy workspaces source-backed, retrievable, and self-maintaining.`
 
 ## Topics
 
@@ -26,6 +26,8 @@ Suggested topics:
 - automation
 - project-memory
 - workspace
+- context-engineering
+- retrieval
 
 ## Create repo settings
 
@@ -54,7 +56,7 @@ Or use `PUSH_TO_GITHUB.cmd` in this folder.
 2. Add the description above.
 3. Add topics.
 4. Pin the repo on your GitHub profile.
-5. Make the first issue: `v0.2 project tracing scanner`.
+5. Make the next issue: `v0.3 AI-assisted maintenance`.
 6. Share the repo with a short post:
 
-> I open-sourced AI Cohesion OS: a local-first starter kit for making AI-heavy workspaces self-maintaining through project tracing. It creates durable project memory, decision logs, open-loop tracking, useful-data scoring, and weekly reports. Early, rough, but useful.
+> I open-sourced AI Cohesion OS: a local-first starter kit for making AI-heavy workspaces self-maintaining through project tracing and context serving. It creates durable project memory, decision logs, open-loop tracking, useful-data scoring, weekly reports, and source-linked context chunks. Early, rough, but useful.

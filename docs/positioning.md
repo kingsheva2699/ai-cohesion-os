@@ -63,3 +63,7 @@ Project tracing is not the final benefit. It is the mechanism.
 Best one-liner:
 
 > AI Cohesion OS traces your projects so your AI tools can share the same memory, decisions, and next actions.
+
+## v0.2 proof point
+
+The starter kit now includes local context serving: a small script that indexes files and splits them into source-linked chunks. This makes the positioning tangible: cohesion is not just a folder structure, it is a retrieval habit that helps AI tools load the right context without bloating the conversation.

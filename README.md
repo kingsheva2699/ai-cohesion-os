@@ -23,6 +23,8 @@ It gives your workspace a self-maintaining memory and management structure so AI
 
 The mechanism is **project tracing**: continuously maintaining source-backed project profiles, decisions, open loops, stale checks, useful-data scoring, and reports so AI tools can share the same operational reality.
 
+v0.2 adds **context serving**: chunking the workspace into small path-linked sections so AI tools can load only the context they need. See [`docs/context-serving.md`](docs/context-serving.md).
+
 ## What this is
 
 A downloadable local-first starter kit for building a personal/team AI operating layer:
@@ -34,6 +36,8 @@ A downloadable local-first starter kit for building a personal/team AI operating
 - useful-data scoring
 - stale-context detection
 - source-backed project profiles
+- bounded context chunks for efficient AI retrieval
+- local context indexes with path/line references
 - approval gates for external actions
 - templates/scripts that any AI assistant can use
 
@@ -74,6 +78,8 @@ It sits underneath them as the **cohesion layer**.
 git clone https://github.com/YOURNAME/ai-cohesion-os.git
 cd ai-cohesion-os
 python scripts/init_workspace.py ./my-ai-workspace
+python scripts/context_index.py ./my-ai-workspace build
+python scripts/context_index.py ./my-ai-workspace query "open loops" --top 5
 python scripts/weekly_report.py ./my-ai-workspace
 ```
 
@@ -92,7 +98,13 @@ my-ai-workspace/
   templates/
     project_profile.md
     weekly_report.md
+    context_manifest.json
+  .cohesion/
+    context_index.json
+    context_chunks.json
 ```
+
+The context indexer writes `.cohesion/context_index.json` and `.cohesion/context_chunks.json` so AI tools can retrieve small source-linked chunks instead of whole folders.
 
 The weekly report script writes a report under `reports/` showing discovered projects and missing profiles.
 
@@ -121,7 +133,7 @@ It is closer to:
 
 ## Status
 
-Early starter-kit version. The first goal is practical usefulness: let people download it and immediately make their AI/project setup more coherent.
+Early starter-kit version. v0.2 adds a local context-serving layer: file metadata, chunked context retrieval, and bounded source excerpts for AI assistants.
 
 ## License
 
@@ -129,5 +141,5 @@ Apache-2.0.
 
 ## Built by AI FlowPal
 
-AI Cohesion OS is maintained as a public starter kit by [AI FlowPal](https://aiflowpal.com/) ? practical AI workflow systems for customer-facing operations, project memory, and follow-through.
+AI Cohesion OS is maintained as a public starter kit by [AI FlowPal](https://aiflowpal.com/) - practical AI workflow systems for customer-facing operations, project memory, and follow-through.
 

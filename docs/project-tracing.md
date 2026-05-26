@@ -38,6 +38,8 @@ Project tracing creates that shared context by maintaining:
 
 Once this layer exists, different AI tools/agents can coordinate around the same ground truth.
 
+The context-serving layer makes that ground truth efficient to use: instead of loading an entire project folder or old chat transcript, an assistant can search bounded source chunks and pull the exact file section it needs.
+
 ## Product statement
 
 AI Cohesion OS uses project tracing to make your AI-assisted workspace self-maintaining.
