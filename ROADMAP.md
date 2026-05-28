@@ -22,26 +22,39 @@
 - [ ] Extract open loops from Markdown checklists into structured project index
 - [ ] Add `cohesion status` CLI wrapper
 
-## v0.3 - AI-assisted maintenance
+## v0.3 - Connector health + protocol readiness
+
+- [x] Add `systems/` export folder
+- [x] Add `connectors/connectors.json` configuration
+- [x] Add connector health CLI
+- [x] Check required paths, freshness, and optional HTTP probes
+- [x] Write machine-readable and human-readable health reports
+- [x] Wire connector health into smoke tests
+- [ ] Add connector-specific normalization recipes
+- [ ] Add watch/sync examples for cron, Zapier, Make, and local scripts
+
+## v0.4 - AI-assisted maintenance
 
 - [ ] Optional LLM summarizer interface
 - [ ] Source-backed weekly report drafts
 - [ ] Decision/open-loop extraction prompts
 - [ ] Human approval gate pattern
 
-## v0.4 - Project Orbit UI
+## v0.5 - Project Orbit UI
 
 - [ ] Static graph from project index
 - [ ] Project freshness/status colors
 - [ ] Dependency links
 - [ ] Local browser dashboard
 
-## v0.5 - Integrations
+## v0.6 - Live integration adapters
 
 - [ ] GitHub issues/PR summaries
 - [ ] Notion/Markdown export ingest
 - [ ] Slack/Discord/Telegram export ingest
 - [ ] Linear/Jira/ClickUp import adapters
+- [ ] OAuth/API connector examples
+- [ ] Retry queues and connector health probes for live adapters
 
 ## v1.0 - Local-first AI cohesion layer
 

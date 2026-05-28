@@ -35,7 +35,7 @@ TEXT_EXTS = {
 EXCLUDE_GLOBS = [
     ".git", ".git/**", "**/.git/**", "node_modules", "**/node_modules/**",
     ".venv", "venv", "**/.venv/**", "**/venv/**", "__pycache__", "**/__pycache__/**",
-    ".cohesion/context_index.json", ".cohesion/context_chunks.json",
+    ".cohesion/context_index.json", ".cohesion/context_chunks.json", ".cohesion/connector_health.json",
     "**/*.zip", "**/*.db", "**/*.sqlite", "**/*.sqlite3", "**/*.log",
     "**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.gif", "**/*.webp", "**/*.pdf", "**/*.xlsx",
     "**/*secret*", "**/*credential*", "**/*.key", "**/*.pem", ".env", ".env.*",

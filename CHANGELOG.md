@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.3.0 - Connector health layer
+
+Starter kit update focused on proving the customer-system communication protocol before adding live vendor connectors.
+
+### Added
+
+- `scripts/connector_health.py` for dependency-free connector health checks.
+- `templates/connectors.json` with default email, CRM, calendar, chat, and webhook export checks.
+- Workspace `systems/` and `connectors/` folders in `init_workspace.py`.
+- `.cohesion/connector_health.json` machine-readable health report.
+- `reports/connector_health_DATE.md` human-readable health report.
+- `docs/connector-health.md` explaining local export health, optional HTTP probes, status model, and boundaries.
+- GitHub Actions smoke test now validates connector health with mock customer-system exports.
+
+### Changed
+
+- README quick start now includes connector health initialization/checks.
+- Smoke test now populates mock system exports before building the context index.
+- Context index excludes generated `.cohesion/connector_health.json` while allowing the Markdown report to be indexed.
+
+### Safety
+
+- Connector health verifies local exports/probes only; it does not grant permission for external sends.
+- Default config warns against credentials/raw private attachments in `systems/`.
+
 ## v0.2.0 - Context serving layer
 
 Public-safe starter kit update focused on efficient AI context use.

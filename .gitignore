@@ -22,8 +22,10 @@ private-workspace/
 reports/*.tmp
 .cohesion/context_index.json
 .cohesion/context_chunks.json
+.cohesion/connector_health.json
 **/.cohesion/context_index.json
 **/.cohesion/context_chunks.json
+**/.cohesion/connector_health.json
 
 # Logs/cache
 *.log

@@ -25,6 +25,8 @@ The mechanism is **project tracing**: continuously maintaining source-backed pro
 
 v0.2 adds **context serving**: chunking the workspace into small path-linked sections so AI tools can load only the context they need. See [`docs/context-serving.md`](docs/context-serving.md).
 
+v0.3 adds **connector health**: a local-first health gate for customer-system exports and optional probes so AI tools know whether email, CRM, calendar, chat, and webhook context is present and fresh before relying on it. See [`docs/connector-health.md`](docs/connector-health.md).
+
 ## What this is
 
 A downloadable local-first starter kit for building a personal/team AI operating layer:
@@ -38,6 +40,7 @@ A downloadable local-first starter kit for building a personal/team AI operating
 - source-backed project profiles
 - bounded context chunks for efficient AI retrieval
 - local context indexes with path/line references
+- connector health checks for customer-system exports/probes
 - approval gates for external actions
 - templates/scripts that any AI assistant can use
 
@@ -78,8 +81,10 @@ It sits underneath them as the **cohesion layer**.
 git clone https://github.com/YOURNAME/ai-cohesion-os.git
 cd ai-cohesion-os
 python scripts/init_workspace.py ./my-ai-workspace
+python scripts/connector_health.py ./my-ai-workspace init
 python scripts/context_index.py ./my-ai-workspace build
 python scripts/context_index.py ./my-ai-workspace query "open loops" --top 5
+python scripts/connector_health.py ./my-ai-workspace check --write
 python scripts/weekly_report.py ./my-ai-workspace
 ```
 
@@ -95,6 +100,9 @@ my-ai-workspace/
   reports/
   memory/
     decision_log.md
+  systems/
+  connectors/
+    connectors.json
   templates/
     project_profile.md
     weekly_report.md
@@ -105,6 +113,8 @@ my-ai-workspace/
 ```
 
 The context indexer writes `.cohesion/context_index.json` and `.cohesion/context_chunks.json` so AI tools can retrieve small source-linked chunks instead of whole folders.
+
+The connector health checker writes `.cohesion/connector_health.json` and a dated Markdown report under `reports/` so AI tools can see whether linked customer systems are healthy, stale, missing, or disabled.
 
 The weekly report script writes a report under `reports/` showing discovered projects and missing profiles.
 
@@ -134,6 +144,8 @@ It is closer to:
 ## Status
 
 Early starter-kit version. v0.2 adds a local context-serving layer: file metadata, chunked context retrieval, and bounded source excerpts for AI assistants.
+
+v0.3 adds a connector health layer for testing whether customer-system exports/probes are present and fresh. This validates the local communication protocol, not full live OAuth/API integration yet.
 
 ## License
 

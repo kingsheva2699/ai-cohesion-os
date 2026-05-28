@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "description": "Local-first connector health configuration for AI Cohesion OS. Start with file exports; add HTTP probes only for systems you control.",
+  "connectors": [
+    {
+      "id": "email_export",
+      "name": "Email / Gmail / Outlook export",
+      "type": "file_export",
+      "enabled": true,
+      "critical": true,
+      "requiredPaths": [
+        "systems/email/messages.jsonl"
+      ],
+      "optionalPaths": [
+        "systems/email/attachments_manifest.csv"
+      ],
+      "freshnessHours": 24,
+      "notes": "Export inbound messages or normalized email events here. Do not store credentials or raw private attachments unless explicitly approved."
+    },
+    {
+      "id": "crm_export",
+      "name": "CRM / pipeline export",
+      "type": "file_export",
+      "enabled": true,
+      "critical": true,
+      "requiredPaths": [
+        "systems/crm/*.csv"
+      ],
+      "freshnessHours": 48,
+      "notes": "Lead, deal, quote, or case records exported from HubSpot, Pipedrive, Airtable, Sheets, or a custom CRM."
+    },
+    {
+      "id": "calendar_export",
+      "name": "Calendar / schedule export",
+      "type": "file_export",
+      "enabled": true,
+      "critical": false,
+      "requiredPaths": [
+        "systems/calendar/*.md"
+      ],
+      "freshnessHours": 72,
+      "notes": "Appointments, deadlines, reminders, and follow-up windows."
+    },
+    {
+      "id": "chat_export",
+      "name": "Team chat export",
+      "type": "file_export",
+      "enabled": true,
+      "critical": false,
+      "requiredPaths": [
+        "systems/chat/*.md"
+      ],
+      "freshnessHours": 72,
+      "notes": "Slack, Teams, Discord, Telegram, or internal chat summaries. Prefer summaries over raw private logs."
+    },
+    {
+      "id": "webhook_events",
+      "name": "Website / form webhook events",
+      "type": "file_export",
+      "enabled": true,
+      "critical": false,
+      "requiredPaths": [
+        "systems/webhooks/*.jsonl"
+      ],
+      "freshnessHours": 24,
+      "notes": "Normalized contact forms, booking forms, quote requests, and other inbound workflow events."
+    }
+  ]
+}
