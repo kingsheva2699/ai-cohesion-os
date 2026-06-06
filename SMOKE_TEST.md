@@ -9,6 +9,8 @@ printf '# Calendar\n- Follow up with Test Lead\n' > ./tmp-workspace/systems/cale
 printf '# Chat\nOps note: Test Lead needs response.\n' > ./tmp-workspace/systems/chat/ops.md
 printf '{"event":"lead.created","lead_id":"1"}\n' > ./tmp-workspace/systems/webhooks/events.jsonl
 python scripts/connector_health.py ./tmp-workspace check --write
+python scripts/tool_registry.py ./tmp-workspace scaffold lead-intake-fast-reply
+python scripts/tool_registry.py ./tmp-workspace check
 python scripts/context_index.py ./tmp-workspace build
 python scripts/context_index.py ./tmp-workspace query "project profile" --top 3
 python scripts/context_index.py ./tmp-workspace get README.md --lines 20

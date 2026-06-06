@@ -1,5 +1,23 @@
 # Changelog
 
+## Unreleased - Tool module layer
+
+Starter kit update focused on turning internal workflow patterns into public-safe GitHub/tool modules.
+
+### Added
+
+- `scripts/tool_registry.py` for tool module registry init/list/check/scaffold.
+- `templates/tool_modules.json` with starter candidate modules for lead intake, client status radar, and workflow briefing.
+- Workspace `tools/` folder in `init_workspace.py`.
+- `docs/tool-modules.md` explaining public GitHub readiness, privacy boundaries, and scaffolded artifacts.
+- README and smoke-test coverage for the tool registry.
+
+### Safety
+
+- Tool modules default to `demo-data-only` and require explicit public boundaries.
+- Scaffolded modules include README, MANIFEST, PRIVACY, and VALIDATION files before public publishing.
+- The registry is metadata/scaffolding only; it does not create GitHub repos or push public code by itself.
+
 ## v0.3.0 - Connector health layer
 
 Starter kit update focused on proving the customer-system communication protocol before adding live vendor connectors.

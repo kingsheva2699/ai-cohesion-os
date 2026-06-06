@@ -14,6 +14,7 @@ WORKSPACE_DIRS = [
     'templates',
     'systems',
     'connectors',
+    'tools',
     '.cohesion',
 ]
 
@@ -36,6 +37,7 @@ def main():
     copy_template('weekly_report.md', ws / 'templates' / 'weekly_report.md')
     copy_template('context_manifest.json', ws / 'templates' / 'context_manifest.json')
     copy_template('connectors.json', ws / 'connectors' / 'connectors.json')
+    copy_template('tool_modules.json', ws / 'tools' / 'tool_modules.json')
     copy_template('decision_log.md', ws / 'memory' / 'decision_log.md')
     readme = ws / 'README.md'
     if not readme.exists():
@@ -52,6 +54,7 @@ Created: {date.today()}
 - `templates/` - reusable templates
 - `systems/` - local exports/events from customer systems
 - `connectors/` - connector health configuration
+- `tools/` - public-safe tool module manifests and scaffolds
 - `.cohesion/` - generated local context indexes and health reports (do not publish private indexes)
 
 ## Next step
@@ -61,6 +64,7 @@ Create a project folder and copy `templates/project_profile.md` into it. Then ru
 ```bash
 python scripts/context_index.py . build
 python scripts/connector_health.py . check --write
+python scripts/tool_registry.py . check
 ```
 ''', encoding='utf-8')
     print(f'Initialized Project Memory workspace at {ws}')

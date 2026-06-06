@@ -8,6 +8,9 @@
    - `/reports`
    - `/memory`
    - `/templates`
+   - `/systems`
+   - `/connectors`
+   - `/tools`
 
 2. **Project profiles**
    - status
@@ -34,20 +37,31 @@
    - bounded excerpts for AI tools
    - conservative local exclusions for secrets, caches, generated artifacts, and binary files
 
-5. **Maintenance scripts**
+5. **Connector health layer**
+   - local system export checks
+   - optional HTTP probes
+   - freshness windows
+   - machine-readable and human-readable health reports
+
+6. **Tool module layer**
+   - public-safe module registry
+   - README / MANIFEST / PRIVACY / VALIDATION scaffolds
+   - GitHub readiness checks before publishing reusable tools
+
+7. **Maintenance scripts**
    - initialize workspace
    - build context indexes
    - scan project files
    - generate weekly report
    - detect stale projects
 
-6. **Optional AI layer**
+8. **Optional AI layer**
    - summarize project changes
    - draft reports
    - classify open loops
    - suggest next actions
 
-7. **Future UI**
+9. **Future UI**
    - visual project orbit
    - health dashboard
    - source-linked graph

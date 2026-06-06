@@ -33,21 +33,31 @@
 - [ ] Add connector-specific normalization recipes
 - [ ] Add watch/sync examples for cron, Zapier, Make, and local scripts
 
-## v0.4 - AI-assisted maintenance
+## v0.4 - Tool module packaging
+
+- [x] Add `tools/` workspace folder
+- [x] Add `tools/tool_modules.json` registry template
+- [x] Add `scripts/tool_registry.py` for init/list/check/scaffold
+- [x] Scaffold README / MANIFEST / PRIVACY / VALIDATION files for public-safe modules
+- [x] Document GitHub readiness and privacy boundaries
+- [ ] Add example synthetic datasets for each starter module
+- [ ] Add a one-command repo export helper
+
+## v0.5 - AI-assisted maintenance
 
 - [ ] Optional LLM summarizer interface
 - [ ] Source-backed weekly report drafts
 - [ ] Decision/open-loop extraction prompts
 - [ ] Human approval gate pattern
 
-## v0.5 - Project Orbit UI
+## v0.6 - Project Orbit UI
 
 - [ ] Static graph from project index
 - [ ] Project freshness/status colors
 - [ ] Dependency links
 - [ ] Local browser dashboard
 
-## v0.6 - Live integration adapters
+## v0.7 - Live integration adapters
 
 - [ ] GitHub issues/PR summaries
 - [ ] Notion/Markdown export ingest

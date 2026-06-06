@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "0.1",
+  "description": "Public-safe tool module registry. Use this to decide which internal workflow modules are ready to become GitHub/tool repos.",
+  "rules": [
+    "Use synthetic or public demo data only.",
+    "Do not include client inboxes, CRM exports, credentials, browser profiles, private reports, or raw customer files.",
+    "A module is GitHub-ready only after README, MANIFEST, PRIVACY, VALIDATION, license, and smoke test are clean."
+  ],
+  "modules": [
+    {
+      "id": "lead-intake-fast-reply",
+      "name": "Lead Intake Fast Reply",
+      "purpose": "Turn messy inbound lead data into triage, suggested reply, priority, missing fields, and a human approval checklist.",
+      "status": "candidate",
+      "repoName": "aiflowpal-lead-intake-fast-reply",
+      "visibility": "public-candidate",
+      "privacyLevel": "demo-data-only",
+      "toolSurface": "CLI/library/local demo",
+      "githubReady": false,
+      "publicBoundary": "Use synthetic leads only. Never publish real prospect inboxes, CRM exports, phone numbers, compose URLs, or customer messages.",
+      "artifacts": [
+        "tools/lead-intake-fast-reply/README.md",
+        "tools/lead-intake-fast-reply/MANIFEST.json",
+        "tools/lead-intake-fast-reply/PRIVACY.md",
+        "tools/lead-intake-fast-reply/VALIDATION.md"
+      ]
+    },
+    {
+      "id": "client-status-radar",
+      "name": "Client Status Radar",
+      "purpose": "Summarize customer/project state, stale follow-ups, open loops, risks, and next best action from local exports.",
+      "status": "candidate",
+      "repoName": "aiflowpal-client-status-radar",
+      "visibility": "public-candidate",
+      "privacyLevel": "demo-data-only",
+      "toolSurface": "CLI/local dashboard demo",
+      "githubReady": false,
+      "publicBoundary": "Use fake customers and sanitized workflow notes only. Never publish real client names, live pipeline data, emails, or private decisions.",
+      "artifacts": [
+        "tools/client-status-radar/README.md",
+        "tools/client-status-radar/MANIFEST.json",
+        "tools/client-status-radar/PRIVACY.md",
+        "tools/client-status-radar/VALIDATION.md"
+      ]
+    },
+    {
+      "id": "workflow-briefing-layer",
+      "name": "Workflow Briefing Layer",
+      "purpose": "Convert scattered process notes into a concise daily work briefing, blockers, approvals needed, and suggested next moves.",
+      "status": "candidate",
+      "repoName": "aiflowpal-workflow-briefing-layer",
+      "visibility": "public-candidate",
+      "privacyLevel": "demo-data-only",
+      "toolSurface": "CLI/report generator",
+      "githubReady": false,
+      "publicBoundary": "Use public/sample process notes only. Never publish private operational logs, customer-specific SOPs, or sensitive business strategy.",
+      "artifacts": [
+        "tools/workflow-briefing-layer/README.md",
+        "tools/workflow-briefing-layer/MANIFEST.json",
+        "tools/workflow-briefing-layer/PRIVACY.md",
+        "tools/workflow-briefing-layer/VALIDATION.md"
+      ]
+    }
+  ]
+}
