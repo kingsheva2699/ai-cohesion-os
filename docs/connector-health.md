@@ -82,8 +82,8 @@ python scripts/connector_health.py ./my-ai-workspace check --write
 # Print JSON for automation
 python scripts/connector_health.py ./my-ai-workspace check --json
 
-# Do not fail shell scripts even when connectors are degraded/failing
-python scripts/connector_health.py ./my-ai-workspace check --soft
+# Exit non-zero when degraded/failing (for CI and automation gates)
+python scripts/connector_health.py ./my-ai-workspace check --gate
 ```
 
 ## Status model
@@ -93,7 +93,7 @@ python scripts/connector_health.py ./my-ai-workspace check --soft
 - `failing` — critical connector is missing required exports or has a failed health probe.
 - `disabled` — explicitly disabled in config.
 
-The command exits non-zero when overall status is `degraded` or `failing`, unless `--soft` is used.
+The command always exits `0` by default so quick-start sequences and shell chains do not break on a fresh workspace. Pass `--gate` to exit non-zero when overall status is `degraded` or `failing` — use that mode in CI pipelines or automation that should hard-stop on unhealthy connectors. (`--soft` is deprecated and now a no-op.)
 
 ## What this validates
 

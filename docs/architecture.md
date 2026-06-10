@@ -48,20 +48,26 @@
    - README / MANIFEST / PRIVACY / VALIDATION scaffolds
    - GitHub readiness checks before publishing reusable tools
 
-7. **Maintenance scripts**
+7. **Context guidance layer**
+   - broad raw indexes for files, chat exports, logs, and source manifests
+   - task-specific retrieval before deeper AI analysis
+   - source-backed extraction of decisions, open loops, facts, and stale claims
+   - selective promotion into durable memory/project files
+
+8. **Maintenance scripts**
    - initialize workspace
    - build context indexes
    - scan project files
    - generate weekly report
    - detect stale projects
 
-8. **Optional AI layer**
+9. **Optional AI layer**
    - summarize project changes
    - draft reports
    - classify open loops
    - suggest next actions
 
-9. **Future UI**
+10. **Future UI**
    - visual project orbit
    - health dashboard
    - source-linked graph

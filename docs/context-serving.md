@@ -78,9 +78,12 @@ Project tracing answers: "What is true about this work right now?"
 
 Context serving answers: "What exact slice of source-backed context should the AI load to act on that truth?"
 
+Context guidance answers: "Which source type should the AI consult at all, and what should happen to what it finds?" See [`context-guidance.md`](context-guidance.md).
+
 Together they create AI cohesion:
 
 - project profiles define current state;
 - decision logs preserve why choices were made;
 - context chunks make the right source material cheaply retrievable;
+- guidance rules prevent old logs and raw exports from becoming false memory;
 - reports and agents can work from the same grounded project reality.

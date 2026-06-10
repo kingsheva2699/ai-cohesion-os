@@ -9,6 +9,7 @@ Usage:
   python scripts/connector_health.py ./my-ai-workspace init
   python scripts/connector_health.py ./my-ai-workspace check --write
   python scripts/connector_health.py ./my-ai-workspace check --json
+  python scripts/connector_health.py ./my-ai-workspace check --gate  # non-zero exit on degraded/failing
 """
 from __future__ import annotations
 
@@ -354,7 +355,8 @@ def main() -> int:
     chk = sub.add_parser("check", help="Evaluate connector health")
     chk.add_argument("--json", action="store_true", help="Print JSON report")
     chk.add_argument("--write", action="store_true", help="Write .cohesion/connector_health.json and reports/connector_health_DATE.md")
-    chk.add_argument("--soft", action="store_true", help="Always exit 0 even if health is degraded/failing")
+    chk.add_argument("--gate", action="store_true", help="Exit non-zero when overall status is degraded/failing (for CI/automation gates)")
+    chk.add_argument("--soft", action="store_true", help=argparse.SUPPRESS)  # deprecated: exit 0 is now the default
     args = parser.parse_args()
     workspace = Path(args.workspace)
 
@@ -375,9 +377,9 @@ def main() -> int:
             if args.write:
                 print(f"wrote {report['written']['json']}")
                 print(f"wrote {report['written']['markdown']}")
-        if args.soft:
-            return 0
-        return 1 if report["overallStatus"] in {"degraded", "failing"} else 0
+        if args.gate and not args.soft:
+            return 1 if report["overallStatus"] in {"degraded", "failing"} else 0
+        return 0
 
     return 2
 

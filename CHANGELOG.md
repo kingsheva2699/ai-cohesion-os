@@ -10,7 +10,12 @@ Starter kit update focused on turning internal workflow patterns into public-saf
 - `templates/tool_modules.json` with starter candidate modules for lead intake, client status radar, and workflow briefing.
 - Workspace `tools/` folder in `init_workspace.py`.
 - `docs/tool-modules.md` explaining public GitHub readiness, privacy boundaries, and scaffolded artifacts.
+- `docs/context-guidance.md` documenting the next-layer retrieval discipline: index broadly, reason narrowly, promote selectively.
 - README and smoke-test coverage for the tool registry.
+
+### Fixed
+
+- `connector_health.py check` now exits `0` by default; the previous non-zero exit on degraded/failing broke the README quick-start chain and CI smoke test on fresh workspaces. Use the new `--gate` flag for strict non-zero exits in CI/automation (`--soft` is deprecated and a no-op).
 
 ### Safety
 

@@ -43,11 +43,13 @@
 - [ ] Add example synthetic datasets for each starter module
 - [ ] Add a one-command repo export helper
 
-## v0.5 - AI-assisted maintenance
+## v0.5 - Context guidance + AI-assisted maintenance
 
+- [x] Document the context guidance principle: index broadly, reason narrowly, promote selectively
 - [ ] Optional LLM summarizer interface
 - [ ] Source-backed weekly report drafts
 - [ ] Decision/open-loop extraction prompts
+- [ ] Typed extraction schema for decisions, facts, open loops, stale claims, and provenance
 - [ ] Human approval gate pattern
 
 ## v0.6 - Project Orbit UI

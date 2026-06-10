@@ -29,6 +29,8 @@ v0.3 adds **connector health**: a local-first health gate for customer-system ex
 
 v0.4 adds **tool modules**: a public-safe registry and scaffolding pattern for turning internal workflow modules into GitHub-ready tools with README, manifest, privacy boundary, and validation files. See [`docs/tool-modules.md`](docs/tool-modules.md).
 
+v0.5 drafts **context guidance**: the discipline of indexing broadly, reasoning narrowly, and promoting selectively so AI tools can retrieve the right source-backed slice without turning every old input into long-term memory. See [`docs/context-guidance.md`](docs/context-guidance.md).
+
 ## What this is
 
 A downloadable local-first starter kit for building a personal/team AI operating layer:
@@ -44,6 +46,7 @@ A downloadable local-first starter kit for building a personal/team AI operating
 - local context indexes with path/line references
 - connector health checks for customer-system exports/probes
 - public-safe tool module registry and scaffolds
+- context guidance for deciding which sources to retrieve, analyze, and promote
 - approval gates for external actions
 - templates/scripts that any AI assistant can use
 
@@ -139,9 +142,10 @@ The weekly report script writes a report under `reports/` showing discovered pro
 2. **Project tracing is the means; AI cohesion is the result.**
 3. **Cohesion beats more tools.**
 4. **Do not remember everything. Remember what changes decisions.**
-5. **Management/tracking should emerge from the operating layer.**
-6. **AI drafts and recommends; humans approve external actions.**
-7. **Local-first by default. Private work stays private.**
+5. **Index broadly, reason narrowly, promote selectively.**
+6. **Management/tracking should emerge from the operating layer.**
+7. **AI drafts and recommends; humans approve external actions.**
+8. **Local-first by default. Private work stays private.**
 
 ## Market category
 
