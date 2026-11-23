@@ -27,6 +27,12 @@ reports/*.tmp
 **/.cohesion/context_chunks.json
 **/.cohesion/connector_health.json
 
+# Private local handoff state and generated outputs (never distribute these)
+.cohesion/resume/
+pickup-profiles.json
+retired-proofs/
+systems/pickup-validation*.json
+
 # Logs/cache
 *.log
 .cache/

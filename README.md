@@ -15,6 +15,12 @@ Most people using AI have the same problem: the tools are powerful, but disconne
 
 It gives your workspace a self-maintaining memory and management structure so AI can coordinate around durable context instead of starting from scratch every time.
 
+## Pick up a project in a different AI tool
+
+Run `python scripts/demo_handoff.py` for an offline demo using two invented inventory items. A first session records the expected result; a fresh one verifies it and shows the review that is still open. A new note then stops replay and names the changed source. Demo state is temporary: it does not enroll a real project, call a model, or use your clipboard.
+
+For your own projects, see [the reviewed handoff guide](docs/resume.md). Use `python scripts/pickup.py list` in a terminal, or `python scripts/pickup_view.py` for the optional local desktop picker. A handoff is evidence, not authorization to execute a step.
+
 ## Core promise
 
 > Make your AI setup cohesive enough that project tracking, memory, reporting, and execution visibility become side effects.

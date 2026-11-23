@@ -12,6 +12,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Test reviewed handoffs with fictional data
+        run: |
+          if command -v xvfb-run >/dev/null && python -c 'import tkinter'; then
+            xvfb-run -a python -B -m unittest discover -s tests -v
+          else
+            python -B -m unittest discover -s tests -v
+          fi
+          python -B scripts/demo_handoff.py
       - name: Run starter kit smoke test
         run: |
           python scripts/init_workspace.py ./tmp-workspace
